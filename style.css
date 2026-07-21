@@ -20,8 +20,7 @@ ul {
     width: 100%;
     margin: 0;
     padding: 0;
-    gap: 15px;
-    /* justify-content: flex-start; */
+    gap: 10px;
 }
 
 .search > ul li:nth-child(2) {
@@ -33,10 +32,7 @@ ul {
 }
 
 .search input {
-    width: 100%;
     border: none;
-    outline: none;
-    background: transparent;
     font-size: 1rem;
 }
 
@@ -50,6 +46,7 @@ section {
 }
 
 .home {
+    font-size: xx-large;
     margin-bottom: 20px;
 }
 
@@ -64,7 +61,6 @@ section {
     margin-top: 20px;
     display: flex;
     gap: 10px;
-    align-items: flex-start;
 }
 
 .bookmark {
@@ -85,11 +81,16 @@ aside {
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    width: fit-content;
-    white-space: nowrap;
     align-self: flex-end;
 }
 
 
+/*
+1. align-self 
+2. flex: 1 (자동확장)
+
+
+
+*/
 
 
