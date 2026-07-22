@@ -4,7 +4,6 @@ const box = document.querySelector(".box")
 const names = document.querySelectorAll("ul span");
 names.forEach((el)=>console.log(el.textContent))
 
-// ul 체크박스 -- span 공간 균일하게 안배하기?
 btn.addEventListener("click", () => {
     let str = "주문내역: ";
 
