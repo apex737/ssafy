@@ -31,28 +31,42 @@ const id1Element = users.filter((user) => user.id === 1)[0];
 // console.log(jobUsers);
 console.log(id1Element);
 
-
 const users2 = [
   {
     id: 3306,
     name: "데이비드",
     hasJob: true,
-    age: 40
+    age: 40,
   },
   {
     id: 7244,
     name: "실비",
     hasJob: true,
-    age: 60
+    age: 60,
   },
   {
     id: 5800,
     name: "나나",
     hasJob: false,
-    age: 20
+    age: 20,
   },
 ];
 
+// 유저 나이의 합 출력
 let sum = 0;
-users2.forEach((user) => sum += user.age);
+users2.forEach((user) => (sum += user.age));
 console.log(sum);
+
+// 나이 >= 40 && 직업 있는사람 출력
+const condArr = users2.filter((user) => user.age >= 40 && user.hasJob);
+condArr.forEach((el) => console.log(el.name));
+
+const names = [];
+if (names === []) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+
+
