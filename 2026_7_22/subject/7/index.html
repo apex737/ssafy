@@ -12,10 +12,13 @@
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
+            width: 150px;
         }
 
-        ul > li > span {
-            flex: 1;
+        ul li {
+            display: flex;
+            /* 텍스트, 체크박스 가장자리로 붙이기 */
+            justify-content: space-between;
         }
 
         .box {
@@ -31,6 +34,7 @@
         .txt {
             margin-bottom: 10px;
         }
+
 
     </style>
 </head>

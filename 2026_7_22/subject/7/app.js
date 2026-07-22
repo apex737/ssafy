@@ -12,6 +12,7 @@ btn.addEventListener("click", () => {
     const checkedList = [];
 
     items.forEach((li) => {
+        // 특성 선택자
         const checkbox = li.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
             checkedList.push(li.querySelector("span").textContent);
@@ -22,5 +23,9 @@ btn.addEventListener("click", () => {
         str += name + " ";
     });
 
-    txt.textContent = str;
+    if(checkedList.length > 0) {
+        txt.textContent = str;
+    } else {
+        txt.textContent = "";
+    }
 });
