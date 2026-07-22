@@ -11,10 +11,10 @@ console.log(calc.add(1,2));
 // 불변성 (immutability)
 const names = ["A", "B", "C"];
 
-// forEach는 함수 1개를 인자로 받는 순회 함수
+// forEach는 함수 1개를 인자로 받는 순회 함수; 당연히 함수 실행과 다름..
 // 리턴 값이 없다.
 // el: element 약자..
-names.forEach((el) => console.log(`${el} 안녕!`));
+const noRet = names.forEach((el) => console.log(`${el} 안녕!`));
 
 // map은 리턴 값이 있음 
 const newNames = names.map((el) => `${el} 안녕!`);

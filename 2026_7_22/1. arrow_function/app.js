@@ -22,6 +22,7 @@ const introduce3 = (name, age) => {
 }
 
 // 4. 화살표 축약: 인라인 함수라면 return 만 명시하는 것도 가능하다.
+// 하지만 함수 키워드 없이 쓰는거 자체를 권장하지 않음
 const introduce4 = (name, age) => `${name} 안녕, 나이는 ${age}세`;
 
 // func 파라미터의 타입은??

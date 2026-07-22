@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ul > li > span {
+            flex: 1;
+        }
+
+        .box {
+            border: 1px solid black;
+            min-width: 150px;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .txt {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>메뉴판</h1>
+        <ul>
+            <li><span>짜장면</span> <input type="checkbox" /></li>
+            <li><span>짬뽕</span> <input type="checkbox" /></li>
+            <li><span>탕수육</span> <input type="checkbox" /></li>
+        </ul>
+        <button class="btn">주문하기</button>
+        <div class="txt"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
