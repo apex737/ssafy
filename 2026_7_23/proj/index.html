@@ -1,15 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Robot Simulator</h1>
+    <div class="input_screen">
+      <span>1부터 5까지 숫자 입력</span>
+      <input type="text" class="row" placeholder="row" />
+      <input type="text" class="col" placeholder="col" />
+      <button class="btn">Create Map</button>
+    </div>
 
-    
+    <div class="main_screen">
+      <div class="map"></div>
+      <div class="status_screen">
+        <div class="status"></div>
+        <div class="life_span"></div>
+        <div class="battery"></div>
+        <div class="coverage"></div>
+      </div>
+    </div>
+
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

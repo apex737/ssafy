@@ -1,0 +1,57 @@
+
+
+.input_screen {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input_screen > input {
+    width: 50%;
+}
+
+.input_screen > .btn {
+    width: 100px;
+}
+
+/* 3중 flex 
+1. row
+2. col
+3. 로봇 아이콘 */
+
+
+.main_screen {
+    display: none;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.map {
+    max-width: 60%;
+    min-height: 40%;
+}
+
+.cell {
+    border: 1px solid #ccc;
+    aspect-ratio: 1 / 1;
+}
+
+.status_screen {
+
+}
+
+.status_screen > .status {
+
+}
+
+.status_screen > .life_span {
+
+}
+
+.status_screen > .battery {
+
+}
+
+.status_screen > .coverage {
+
+}
