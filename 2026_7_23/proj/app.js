@@ -15,6 +15,8 @@ const coverage = statusScreen.querySelector(".coverage");
 
 let mapRow = 0;
 let mapCol = 0;
+let r = 0;
+let c = 0;
 let stateFlag = false; // 아직 입력 안받음
 
 // visited[mapRow][mapCol]; 동적으로 생성하는 방법??
@@ -107,27 +109,34 @@ function warnSign() {
 function moveRobot(key) {
   switch (key) {
     case "W":
-      if (mapRow > 0) {
-        mapRow--;
+      if (r > 0) {
+          r--;
         // 방문처리 관련
       } else {
         //  경보처리..
       }
       break;
     case "A":
-      if (mapCol > 0) mapCol--;
+      if (c > 0) {
+        c--;
+
+      }
       else {
         //  경보처리..
       }
       break;
     case "S":
-      if (mapRow < N - 1) mapRow++;
+      if (r < mapRow - 1) {
+          r++;
+      }
       else {
         //  경보처리..
       }
       break;
     case "D":
-      if (mapCol < N - 1) mapCol++;
+      if (c < mapCol - 1) {
+        c++;
+      }
       else {
         //  경보처리..
       }
@@ -141,10 +150,10 @@ function moveRobot(key) {
 // 화면 전체에서 입력을 받는다.
 document.addEventListener("keydown", (evt) => {
   const key = evt.key;
-  if(key === "W" || key === "A" || key === "S" || key === "D")
+  if(key === "w" || key === "a" || key === "s" || key === "d")
   {
     moveRobot(key.toUpperCase());
-    displayRobot(mapRow, mapCol);
+    displayRobot(r, c);
   }
 });
 
