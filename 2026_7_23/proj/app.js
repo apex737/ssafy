@@ -63,6 +63,10 @@ flex 삼중으로 써서 먼저 구현
 
 // 몇번째 row인가? 몇번째 col인가?
 function displayRobot(row, col){
+    // 기존 로봇 이미지 제거
+    const prevImg = map.querySelector(".robot-img");
+    if (prevImg) prevImg.remove();
+
     // CSS/DOM의 nth-child는 1부터 시작합니다.
     const currRow = map.querySelector(`.row:nth-child(${row + 1})`);
     const currCell = currRow.querySelector(`.cell:nth-child(${col + 1})`);
@@ -152,7 +156,13 @@ document.addEventListener("keydown", (evt) => {
   const key = evt.key;
   if(key === "w" || key === "a" || key === "s" || key === "d")
   {
+    // 1. 기존 로봇을 없앤다
+
+
+    // 2. 인덱스를 이동시킨다
     moveRobot(key.toUpperCase());
+
+    // 3. 새로운 자리에 로봇을 놓는다
     displayRobot(r, c);
   }
 });
