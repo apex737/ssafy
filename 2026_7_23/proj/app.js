@@ -16,34 +16,38 @@ const coverage = statusScreen.querySelector(".coverage");
 let mapRow = 0;
 let mapCol = 0;
 
-function createByFlex(rows, cols) /*
+function createByFlex(
+  rows,
+  cols /*
 flex 삼중으로 써서 먼저 구현
+=> 2중 for 루프를 돌면서 document.createElement + appendChild
 1) 먼저 column으로 배치한다
 2) 다음으로 row로 배치한다
 3) 마지막으로 각 셀을 중앙정렬한다.
-*/
-{
-  let rows = [];
-  for (let i = 0; i < row; i++) {
-    // row 이란 각
-    rows.push(`${(<div class="row"></div>)}`);
-    rows[i] = map.querySelector(".row");
-    rows[i].style.display = "flex";
-    rows[i].style.flex = "1";
-  }
+*/,
+) {
+  map.innerHTML = "";
+  for (let i = 0; i < rows; i++) {
+    // 1. div.row 생성
+    const row = document.createElement("div");
+    row.className = "row";
 
-  rows.forEach((row) => {
-    for(let i = 0; i <col; i++)
-    {
-        row.style.display = "flex";
-        row.style.flex = "1";
-        
+    // 2. 생성된 row를 다시 div.cell로 분할
+    for (let j = 0; j < cols; j++) {
+      const cell = document.createElement("div");
+      cell.className = "cell";
+      row.appendChild(cell);
     }
-  });
+
+    // 3. div.col로 이루어진 row들을 map에 넣기
+    map.appendChild(row);
+
+    // 4. 클래스로 CSS 스타일링
+  }
 }
 
 // Grid 써서 구현
-function createByGrid(rows, cols) {}
+// function createByGrid(rows, cols) {}
 
 btn.addEventListener("click", () => {
   mapRow = Number(row.value);
@@ -61,7 +65,7 @@ btn.addEventListener("click", () => {
     return;
   }
 
-  createGrid(mapRow, mapCol);
+  createByFlex(mapRow, mapCol);
 
   inputScreen.style.display = "none";
   mainScreen.style.display = "flex";
