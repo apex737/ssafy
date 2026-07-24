@@ -42,18 +42,28 @@ VALUES
 SELECT member_id, username, money FROM member;
 
 --  2. username 이 '김영민' 인 데이터를 찾아라. (동명이인)
-SELECT * FROM member WHERE username == '김영민';
+SELECT * FROM member 
+  WHERE username == '김영민';
 
 --  3. money 를 내림차순 정렬 후, 상위 10명만 출력하라.
-SELECT money FROM member ORDER BY money DESC LIMIT 10;
+SELECT money FROM member 
+  ORDER BY money DESC 
+  LIMIT 10;
 
 --  4. gender 가 F 인 데이터만 찾아 출력하라.
-SELECT * FROM member WHERE gender == 'F';
+SELECT * FROM member 
+  WHERE gender == 'F';
 
 --  5. gender 필드를 다음과 같이 수정한 후, 전체 출력하라.
 -- M => male; F => female
-UPDATE member SET gender = 'male' WHERE gender = 'M';
-UPDATE member SET gender = 'female' WHERE gender = 'F';
+UPDATE member 
+  SET gender = 'male' 
+  WHERE gender = 'M';
+
+UPDATE member 
+  SET gender = 'female' 
+  WHERE gender = 'F';
+
 SELECT * FROM member;
 
 -- 참고로 컬럼 명 자체를 바꾸려면..
@@ -61,9 +71,13 @@ SELECT * FROM member;
 -- ALTER TABLE member RENAME COLUMN age TO old_age; -- 컬럼명 변경
 
 -- 6. 모든 사람의 money 를 0 원으로 만든 후, 전체 출력하라.
-UPDATE member SET money = 0;
+UPDATE member 
+  SET money = 0;
+
 SELECT * FROM member;
 
 -- 7. job 이 변호사인 사람을 모두 삭제하고, 전체 출력하라.
-DELETE FROM member WHERE job == '변호사';
+DELETE FROM member 
+  WHERE job == '변호사';
+
 SELECT * FROM member;
