@@ -7,6 +7,11 @@ const map = document.querySelector(".map");
 const row = inputScreen.querySelector(".row");
 const col = inputScreen.querySelector(".col");
 const btn = inputScreen.querySelector(".btn");
+const statusScreen = document.querySelector(".status_screen");
+const status = statusScreen.querySelector(".status");
+const lifeSpan = statusScreen.querySelector(".life_span");
+const battery = statusScreen.querySelector(".battery");
+const coverage = statusScreen.querySelector(".coverage");
 
 let mapRow = 0;
 let mapCol = 0;
