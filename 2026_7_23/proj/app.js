@@ -15,6 +15,10 @@ const coverage = statusScreen.querySelector(".coverage");
 
 let mapRow = 0;
 let mapCol = 0;
+let stateFlag = false; // 아직 입력 안받음
+
+// visited[mapRow][mapCol]; 동적으로 생성하는 방법??
+// 현재 위치에 있는 녀석만 로봇이미지 넣기
 
 function createByFlex(
   rows,
@@ -42,13 +46,35 @@ flex 삼중으로 써서 먼저 구현
     // 3. div.col로 이루어진 row들을 map에 넣기
     map.appendChild(row);
 
+
     // 4. 클래스로 CSS 스타일링
   }
+
+  // curr 이라는 클래스만 붙여서, 그놈만 로봇 이미지 삽입하면될듯?
+//   const firstRow = map.querySelector(".row").firstChild;
+//   const firstChild = firstRow.querySelector(".cell").firstChild;
+//   const imgTag = document.createElement("img");
+//   imgTag.className = "curr";
+//   imgTag.src = "robot-icon.jpg";
+//   firstChild.appendChild(firstChild);
 }
+
+// 몇번째 row인가? 몇번째 col인가?
+function displayRobot(row, col){
+    // CSS/DOM의 nth-child는 1부터 시작합니다.
+    const currRow = map.querySelector(`.row:nth-child(${row + 1})`);
+    const currCell = currRow.querySelector(`.cell:nth-child(${col + 1})`);
+    let imgTag = document.createElement("img");
+    imgTag.src = "./robot-icon.jpg";
+    currCell.appendChild(imgTag);
+}
+
+
+
 
 // Grid 써서 구현
 // function createByGrid(rows, cols) {}
-
+// visited나 seen 배열을 만들어서 방문체크
 btn.addEventListener("click", () => {
   mapRow = Number(row.value);
   mapCol = Number(col.value);
@@ -69,6 +95,7 @@ btn.addEventListener("click", () => {
 
   inputScreen.style.display = "none";
   mainScreen.style.display = "flex";
+  displayRobot(0,0);
 });
 
 function toggleColor() {}
@@ -113,5 +140,11 @@ function moveRobot(key) {
 
 // 화면 전체에서 입력을 받는다.
 document.addEventListener("keydown", (evt) => {
-  moveRobot(evt.key.toUpperCase());
+  const key = evt.key;
+  if(key === "W" || key === "A" || key === "S" || key === "D")
+  {
+    moveRobot(key.toUpperCase());
+    displayRobot(mapRow, mapCol);
+  }
 });
+
